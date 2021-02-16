@@ -1,5 +1,5 @@
-<h1> RecrutaTi </h1>
-<h4> Open source Api project that advertises vacancies in the IT area. </h4>
+<h1 align="center"> RecrutaTi </h1>
+<h4 align="center"> Open source Api project that advertises vacancies in the IT area. </h4>
 <br>
 
 <p align="center">
