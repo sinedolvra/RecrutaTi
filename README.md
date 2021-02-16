@@ -1,10 +1,14 @@
-<h1> RecrutaTi </h1>
-<h4></h4> Open source website project that advertises vacancies in the IT area </h4>
+<h1 align="center"> RecrutaTi </h1>
+<h4 align="center"> Open source Api project that advertises vacancies in the IT area. </h4>
+<br>
 
-<p align="left">
-<a href="https://dotnet.microsoft.com/download">
-    <img src="https://img.shields.io/badge/.NET%20Core-v5.0%2B-blueviolet">
-</a>
+<p align="center">
+    <a href="https://dotnet.microsoft.com/download">
+        <img src="https://img.shields.io/badge/.NET%20Core-v5.0%2B-blueviolet">
+    </a>
+    <a href="https://dev.azure.com/denisolvra0642/Estudos/_build/latest?definitionId=1&branchName=main">
+        <img src="https://dev.azure.com/denisolvra0642/Estudos/_apis/build/status/sinedolvra.RecrutaTi?branchName=main">
+    </a>
 </p>
 
 <h2> Contributing </h2>
