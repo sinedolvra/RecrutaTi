@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutaTi.Application", "src\RecrutaTi.Application\RecrutaTi.Application.csproj", "{39730A9D-8121-4B6F-BE48-C53CCF37E91A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecrutaTi.Domain", "src\RecrutaTi.Domain\RecrutaTi.Domain.csproj", "{71E95AC1-EA6B-47DA-B27D-B76105A539D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39730A9D-8121-4B6F-BE48-C53CCF37E91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39730A9D-8121-4B6F-BE48-C53CCF37E91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39730A9D-8121-4B6F-BE48-C53CCF37E91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39730A9D-8121-4B6F-BE48-C53CCF37E91A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E95AC1-EA6B-47DA-B27D-B76105A539D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E95AC1-EA6B-47DA-B27D-B76105A539D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E95AC1-EA6B-47DA-B27D-B76105A539D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E95AC1-EA6B-47DA-B27D-B76105A539D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
