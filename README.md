@@ -1,5 +1,6 @@
 <h1> RecrutaTi </h1>
-<h4></h4> Open source website project that advertises vacancies in the IT area </h4>
+<h4> Open source Api project that advertises vacancies in the IT area. </h4>
+<br>
 
 <p align="left">
 <a href="https://dotnet.microsoft.com/download">
