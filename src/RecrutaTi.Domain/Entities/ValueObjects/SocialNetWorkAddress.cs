@@ -7,5 +7,6 @@ namespace RecrutaTi.Domain.Entities.ValueObjects
     {
         public SocialNetWork SocialNetWork { get; set; }
         public Uri Uri { get; set; }
+        public Company Company { get; set; }
     }
 }
