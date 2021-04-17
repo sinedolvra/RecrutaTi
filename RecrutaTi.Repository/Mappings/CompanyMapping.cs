@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RecrutaTi.Domain.Entities;
-using RecrutaTi.Domain.Entities.ValueObjects;
 
 namespace RecrutaTi.Repository.Mappings
 {

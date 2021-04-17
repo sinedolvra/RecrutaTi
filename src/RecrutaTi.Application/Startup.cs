@@ -1,16 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Converters;
 using RecrutaTi.Application.Configurations;
+using RecrutaTi.Domain.Settings;
+using WarrantyService.Application.ConfigurationExtension;
 
 namespace RecrutaTi.Application
 {
@@ -24,7 +20,30 @@ namespace RecrutaTi.Application
         
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureSettings(services);
+            var jsonOptions = JsonSerializerExtensions.GetDefaultJsonSerializerSettings();
             services.ConfigureHealthChecks(Configuration);
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.DateFormatString = jsonOptions.DateFormatString;
+                options.SerializerSettings.NullValueHandling = jsonOptions.NullValueHandling;
+                options.SerializerSettings.ContractResolver = jsonOptions.ContractResolver;
+                options.SerializerSettings.Converters.Add(new StringEnumConverter());
+            });
+            
+            ConfigureDatabases(services);
+        }
+
+        private void ConfigureSettings(IServiceCollection services)
+        {
+            var repositorySettings = Configuration.GetSection(RepositorySettings.SectionName).Get<RepositorySettings>();
+            repositorySettings.SetInstance();
+        }
+
+        private void ConfigureDatabases(IServiceCollection services)
+        {
+            services.AddEntityFrameworkSqlServer();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -37,8 +56,9 @@ namespace RecrutaTi.Application
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
-            {
-            })
+                {
+                    endpoints.MapControllers();
+                })
                 .ConfigureHealthCheckEndpoints();
         }
     }

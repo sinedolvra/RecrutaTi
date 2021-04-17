@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
+using RecrutaTi.Domain.Settings;
 
 namespace RecrutaTi.Application.Configurations
 {
@@ -14,8 +15,8 @@ namespace RecrutaTi.Application.Configurations
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddSqlServer(
-                    connectionString: configuration.GetSection("Databases:RecrutaTiDb:ConnectionString").Value,
-                    name: configuration.GetSection("Databases:RecrutaTiDb:ServiceName").Value
+                    connectionString: RepositorySettings.Instance.RecrutaTiDbSettings.ConnectionString,
+                    name: RepositorySettings.Instance.RecrutaTiDbSettings.ServiceName
                 );
         }
 
