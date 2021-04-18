@@ -10,5 +10,7 @@ namespace RecrutaTi.Domain.Entities
         public string Logo { get; set; }
         public Address Address { get; set; }
         public IList<SocialNetWorkAddress> SocialNetWorks { get; set; }
+        
+        public AdvertiserUser AdvertiserUser { get; set; }
     }
 }

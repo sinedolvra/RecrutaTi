@@ -1,4 +1,4 @@
-namespace RecrutaTi.Domain.Settings
+namespace RecrutaTi.Repository
 {
     public class RepositorySettings
     {

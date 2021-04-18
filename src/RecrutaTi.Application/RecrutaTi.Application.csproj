@@ -24,6 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\RecrutaTi.Repository\RecrutaTi.Repository.csproj" />
       <ProjectReference Include="..\RecrutaTi.Domain\RecrutaTi.Domain.csproj" />
     </ItemGroup>
 

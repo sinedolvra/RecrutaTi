@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace RecrutaTi.Domain.Entities
 {
@@ -16,5 +17,7 @@ namespace RecrutaTi.Domain.Entities
         public Company Company { get; set; }
         public int Quantity { get; set; }
         public string Category { get; set; }
+        
+        public IList<CandidateUser> CandidateUsers { get; set; }
     }
 }

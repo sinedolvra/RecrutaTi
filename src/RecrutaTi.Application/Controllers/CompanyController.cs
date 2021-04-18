@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using RecrutaTi.Domain.Entities;
 using RecrutaTi.Domain.Entities.ValueObjects;
 using RecrutaTi.Domain.Enums;
+using RecrutaTi.Repository;
 
 namespace RecrutaTi.Application.Controllers
 {
@@ -11,8 +12,30 @@ namespace RecrutaTi.Application.Controllers
     [Route("/api/v1/companies")]
     public class CompanyController : Controller
     {
+        public readonly CompanyRepository _repository;
+        public CompanyController(CompanyRepository repository)
+        {
+            _repository = repository;
+        }
+        
         [HttpGet()]
         public IActionResult Index()
+        {
+            try
+            {
+                var company = BuildCompany();
+                _repository.Save(company);
+                return Ok(company);
+            }
+            catch (Exception e)
+            {
+                return Problem(e.Message);
+            }
+            
+            
+        }
+
+        private Company BuildCompany()
         {
             var socialNetworkAddress = new SocialNetWorkAddress()
             {
@@ -36,7 +59,7 @@ namespace RecrutaTi.Application.Controllers
                 Address = address,
                 SocialNetWorks = new List<SocialNetWorkAddress>(){socialNetworkAddress}
             };
-            return Ok(company);
+            return company;
         }
     }
 }

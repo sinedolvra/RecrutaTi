@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Converters;
 using RecrutaTi.Application.Configurations;
-using RecrutaTi.Domain.Settings;
+using RecrutaTi.Repository;
 using WarrantyService.Application.ConfigurationExtension;
 
 namespace RecrutaTi.Application
