@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Converters;
 using RecrutaTi.Application.Configurations;
 using RecrutaTi.Repository;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using WarrantyService.Application.ConfigurationExtension;
 
 namespace RecrutaTi.Application
@@ -33,6 +34,8 @@ namespace RecrutaTi.Application
             });
             
             ConfigureDatabases(services);
+            services.ConfigureSwaggerSettings(Configuration);
+            services.ConfigureSwaggerInfo();
         }
 
         private void ConfigureSettings(IServiceCollection services)
@@ -60,6 +63,8 @@ namespace RecrutaTi.Application
                     endpoints.MapControllers();
                 })
                 .ConfigureHealthCheckEndpoints();
+
+            app.ConfigureSwagger();
         }
     }
 }
